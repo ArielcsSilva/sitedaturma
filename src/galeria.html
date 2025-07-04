@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Galeria</title>
-  <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+
+  <!-- Tailwind CDN -->
+  <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- LightGallery CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"
+    rel="stylesheet"
+  />
 
   <style>
-    .gradient {
-      background: linear-gradient(90deg, #1e90ff 0%, #00bfff 100%);
+    /* custom height/width for images */
+    .w-400 {
+      width: 400px;
+    }
+    .h-400 {
+      height: 400px;
     }
   </style>
 </head>
+<body class="bg-gray-50">
 
-<body>
-
+  <!-- Navbar -->
   <nav class="w-full bg-white shadow fixed top-0 z-50">
-    <div class="container mx-auto items-center flex justify-between p-4">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <h1 class="text-2xl font-bold text-blue-600">Galeria</h1>
       <ul class="flex gap-6">
-        <h1 class="text-2xl font-bold text-blue-600">Galeria</h1>
         <li><a href="index.html" class="hover:text-blue-500">Início</a></li>
         <li><a href="integrantes.html" class="hover:text-blue-500">Integrantes</a></li>
         <li><a href="galeria.html" class="hover:text-blue-500">Galeria</a></li>
@@ -32,60 +42,96 @@
     </div>
   </nav>
 
-  <main class="pt-28 pb-16 px-4">
+  <!-- Main content -->
+  <main class="pt-28 pb-16 px-4 max-w-6xl mx-auto">
+
     <h1 class="text-3xl font-bold text-center mb-10">Galeria</h1>
 
+    <!-- 2023 -->
     <section class="mb-16">
-      <h2 class="text-2xl font-semibold text-center mb-6">2023</h2>
-      <div class="glide glide-2023 max-w-4xl mx-auto">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <li class="glide__slide"><img src="img/info0123.jpg" alt="info0123" class="h-600 w-600"></li>
-            <li class="glide__slide"><img src="img/info0223.jpg" alt="info0223" class="rounded-xl w-full h-64 object-cover"></li>
-            <li class="glide__slide"><img src="img/info0323.jpeg" alt="info0323" class="rounded-xl w-full h-64 object-cover"></li>
-          </ul>
-        </div>
-        <div class="glide__arrows flex justify-center gap-4 mt-4" data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left bg-gray-200 px-4 py-2 rounded" data-glide-dir="<">‹</button>
-          <button class="glide__arrow glide__arrow--right bg-gray-200 px-4 py-2 rounded" data-glide-dir=">">›</button>
-        </div>
+      <h2 class="text-2xl font-semibold text-center mb-8">2023</h2>
+      <div
+        id="gallery-2023"
+        class="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-center"
+      >
+        <a href="img/info0123.jpg" class="block rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+          <img
+            src="img/info0123.jpg"
+            alt="info0123"
+            class="w-400 h-400 object-cover rounded-lg"
+            loading="lazy"
+          />
+        </a>
+        <a href="img/info0223.jpg" class="block rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+          <img
+            src="img/info0223.jpg"
+            alt="info0223"
+            class="w-400 h-400 object-cover rounded-lg"
+            loading="lazy"
+          />
+        </a>
+        <a href="img/info0323.jpeg" class="block rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+          <img
+            src="img/info0323.jpeg"
+            alt="info0323"
+            class="w-400 h-400 object-cover rounded-lg"
+            loading="lazy"
+          />
+        </a>
       </div>
     </section>
 
+    <!-- 2024 -->
     <section class="mb-16">
-      <h2 class="text-2xl font-semibold text-center mb-6">2024</h2>
-      <div class="glide glide-2024 max-w-4xl mx-auto">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <li class="glide__slide"><img src="img/info0124.jpeg" alt="info0124" class="rounded-xl w-full h-64 object-cover"></li>
-            <li class="glide__slide"><img src="img/info0224.jpg" alt="info0224" class="rounded-xl w-full h-64 object-cover"></li>
-          </ul>
-        </div>
-        <div class="glide__arrows flex justify-center gap-4 mt-4" data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left bg-gray-200 px-4 py-2 rounded" data-glide-dir="<">‹</button>
-          <button class="glide__arrow glide__arrow--right bg-gray-200 px-4 py-2 rounded" data-glide-dir=">">›</button>
-        </div>
+      <h2 class="text-2xl font-semibold text-center mb-8">2024</h2>
+      <div
+        id="gallery-2024"
+        class="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-center"
+      >
+        <a href="img/info0124.jpeg" class="block rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+          <img
+            src="img/info0124.jpeg"
+            alt="info0124"
+            class="w-400 h-400 object-cover rounded-lg"
+            loading="lazy"
+          />
+        </a>
+        <a href="img/info0224.jpg" class="block rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+          <img
+            src="img/info0224.jpg"
+            alt="info0224"
+            class="w-400 h-400 object-cover rounded-lg"
+            loading="lazy"
+          />
+        </a>
       </div>
     </section>
 
+    <!-- 2025 -->
     <section class="mb-16">
-      <h2 class="text-2xl font-semibold text-center mb-6">2025</h2>
-      <div class="glide glide-2025 max-w-4xl mx-auto">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <li class="glide__slide"><img src="img/info0125.jpeg" alt="info0125" class="rounded-xl w-full h-64 object-cover"></li>
-          </ul>
-        </div>
-        <div class="glide__arrows flex justify-center gap-4 mt-4" data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left bg-gray-200 px-4 py-2 rounded" data-glide-dir="<">‹</button>
-          <button class="glide__arrow glide__arrow--right bg-gray-200 px-4 py-2 rounded" data-glide-dir=">">›</button>
-        </div>
+      <h2 class="text-2xl font-semibold text-center mb-8">2025</h2>
+      <div
+        id="gallery-2025"
+        class="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-center"
+      >
+        <a href="img/info0125.jpeg" class="block rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+          <img
+            src="img/info0125.jpeg"
+            alt="info0125"
+            class="w-400 h-400 object-cover rounded-lg"
+            loading="lazy"
+          />
+        </a>
       </div>
     </section>
+
   </main>
 
+  <!-- Footer -->
   <footer class="bg-white border-t py-6">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+    <div
+      class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center"
+    >
       <p class="text-gray-500">© 2025 Guia da Turma</p>
       <div class="flex gap-4 mt-4 md:mt-0">
         <a href="#" class="text-blue-600 hover:underline">Contato</a>
@@ -95,13 +141,26 @@
     </div>
   </footer>
 
+  <!-- LightGallery scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      new Glide('.glide-2023', { type: 'carousel', perView: 1, gap: 20 }).mount();
-      new Glide('.glide-2024', { type: 'carousel', perView: 1, gap: 20 }).mount();
-      new Glide('.glide-2025', { type: 'carousel', perView: 1, gap: 20 }).mount();
+    document.addEventListener("DOMContentLoaded", () => {
+      lightGallery(document.getElementById("gallery-2023"), {
+        plugins: [lgThumbnail, lgZoom],
+        speed: 500,
+      });
+      lightGallery(document.getElementById("gallery-2024"), {
+        plugins: [lgThumbnail, lgZoom],
+        speed: 500,
+      });
+      lightGallery(document.getElementById("gallery-2025"), {
+        plugins: [lgThumbnail, lgZoom],
+        speed: 500,
+      });
     });
   </script>
-
 </body>
 </html>
